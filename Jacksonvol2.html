@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powell'ın Jackson Hole Konuşması Analizi | 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+            border-left: 5px solid #00A0B0;
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #CC333F;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6A4A3C;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-[#6A4A3C]">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-[#00A0B0] mb-4">Jackson Hole 2025: Powell'dan Piyasaları Sarsan Sinyal</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">Fed Başkanı Jerome Powell, ekonomik risk dengesinin değiştiğini belirterek Eylül ayında olası bir faiz indiriminin kapısını araladı. İşte konuşmanın ana hatları ve piyasalara etkileri.</p>
+        </header>
+
+        <main class="space-y-12">
+
+            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 text-center">
+                <h2 class="text-2xl font-bold text-[#6A4A3C] mb-2">Eylül Faiz İndirimi Beklentisi Tavan Yaptı</h2>
+                <p class="text-7xl md:text-8xl font-black text-[#EB6841] my-4">90%</p>
+                <p class="text-md">Powell'ın konuşmasının ardından vadeli işlem piyasalarında Eylül ayında faiz indirimi olasılığı %75 seviyelerinden %90'a fırladı. Bu, piyasanın indirimi neredeyse kesin olarak fiyatladığını gösteriyor.</p>
+            </section>
+            
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#00A0B0]">Ekonominin Yeni Dengesi: Enflasyon ve İstihdam</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Powell, Fed'in "çift yetkisi" olan fiyat istikrarı ve maksimum istihdam arasındaki hassas dengeye vurgu yaptı. Politika odağı, enflasyonla mücadeleden istihdam piyasasındaki zayıflama risklerini de gözeten bir yapıya evriliyor.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-center mb-4">Enflasyon Görünümü: Hedefin Üzerinde Ama...</h3>
+                        <p class="text-sm text-center mb-4">Yıllık enflasyon %2'lik hedefin üzerinde seyretse de, Powell uzun vadeli beklentilerin "iyi bir şekilde sabitlendiğini" belirtti. Bu, Fed'e politika ayarlaması için alan tanıyor.</p>
+                        <div class="chart-container">
+                            <canvas id="inflationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-center mb-4">İstihdam Piyasası: Belirgin Yavaşlama</h3>
+                         <p class="text-sm text-center mb-4">İstihdam artışındaki keskin düşüş, Powell'ın "istihdam üzerindeki aşağı yönlü riskler artıyor" uyarısının temelini oluşturuyor. Bu durum, faiz indirimi argümanını güçlendiriyor.</p>
+                        <div class="chart-container">
+                            <canvas id="jobsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#00A0B0]">Temel Ekonomik Göstergeler (Temmuz 2025)</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="kpi-card">
+                        <div class="kpi-value">2.7%</div>
+                        <div class="kpi-label">Yıllık TÜFE</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">3.1%</div>
+                        <div class="kpi-label">Yıllık Çekirdek TÜFE</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">4.2%</div>
+                        <div class="kpi-label">İşsizlik Oranı</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">35K</div>
+                        <div class="kpi-label">Ort. Aylık İstihdam Artışı (Son 3 Ay)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#00A0B0]">Piyasalarda "Güvercin" Rallisi</h2>
+                 <p class="text-center max-w-3xl mx-auto mb-8">Powell'ın faiz indirimine yeşil ışık yakan açıklamaları, hem geleneksel piyasalarda hem de riskli varlıklarda coşkuyla karşılandı.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 lg:col-span-2">
+                        <h3 class="text-xl font-bold text-center mb-4">Riskli Varlıklar Zirvede: Kripto Piyasası Tepkisi</h3>
+                        <p class="text-sm text-center mb-4">Daha gevşek para politikası beklentisi, sermayeyi yüksek getiri arayışıyla kripto varlıklara yönlendirdi. Bitcoin, tüm zamanların en yüksek seviyesine ulaştı.</p>
+                        <div class="chart-container h-[350px] md:h-[400px]">
+                            <canvas id="cryptoChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-center items-center">
+                        <h3 class="text-xl font-bold text-center mb-4">Geleneksel Piyasalar Pozitif</h3>
+                        <div class="text-center">
+                            <div class="text-6xl font-black text-[#00A0B0]">+1.6%</div>
+                            <div class="text-xl font-semibold mt-2">S&P 500 Endeksi</div>
+                            <p class="mt-4 text-sm">Endeks, konuşmanın ardından gün ortası işlemlerinde kayda değer bir yükseliş yaşayarak Fed'in politika değişikliğini olumlu karşıladığını gösterdi.</p>
+                        </div>
+                         <div class="text-center mt-8">
+                            <div class="text-6xl font-black text-[#CC333F]">>41</div>
+                            <div class="text-xl font-semibold mt-2">Dolar/TL Paritesi</div>
+                            <p class="mt-4 text-sm">Gelişmekte olan ülke para birimleri üzerinde baskı oluştu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#00A0B0]">Fed'in Karar Mekanizması: Baskı ve Bağımsızlık</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Powell, konuşmasında siyasi baskılara da net bir mesaj verdi. Faiz indirimi sinyali verirken, kararların tamamen verilere dayalı ve bağımsız alınacağının altını çizdi.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="text-center p-6 bg-red-100 rounded-lg shadow-md border-l-4 border-red-500">
+                        <div class="text-5xl mb-2">🏛️</div>
+                        <h3 class="text-lg font-bold">Siyasi Baskı</h3>
+                        <p class="text-sm">Başkan Trump'tan gelen<br>"faiz indirimi" talepleri.</p>
+                    </div>
+                    <div class="text-5xl font-bold text-[#EB6841] transform rotate-90 md:rotate-0">→</div>
+                    <div class="text-center p-6 bg-blue-100 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <div class="text-5xl mb-2">🏦</div>
+                        <h3 class="text-lg font-bold">FED'in Bağımsız Duruşu</h3>
+                        <p class="text-sm">"Kararlarımız sadece verilere<br>dayalı olacaktır."</p>
+                    </div>
+                    <div class="text-5xl font-bold text-[#EB6841] transform rotate-90 md:rotate-0">→</div>
+                    <div class="text-center p-6 bg-green-100 rounded-lg shadow-md border-l-4 border-green-500">
+                         <div class="text-5xl mb-2">📊</div>
+                        <h3 class="text-lg font-bold">Veri Odaklı Karar</h3>
+                        <p class="text-sm">Ekonomik görünüm ve risk<br>dengesine göre politika ayarı.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#00A0B0]">Ekonomik Görünüm Özeti ✨</h2>
+                <p class="text-center max-w-3xl mx-auto mb-6">Mevcut ekonomik verilere dayanarak oluşturulan güncel bir ekonomik görünüm özeti için aşağıdaki düğmeye tıklayın.</p>
+                <div class="flex justify-center mb-6">
+                    <button id="generateSummaryBtn" class="bg-[#EB6841] hover:bg-[#CC333F] text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 flex items-center space-x-2">
+                        <span>Ekonomik Görünüm Özeti Oluştur ✨</span>
+                    </button>
+                </div>
+                <div id="summaryOutput" class="bg-gray-50 p-4 rounded-lg text-gray-700 text-sm leading-relaxed min-h-[100px] flex items-center justify-center text-center">
+                    Özet burada görünecektir...
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-sm text-gray-500">&copy; 2025 Finansal Analiz. Bu infografik, kamuya açık kaynaklardan derlenen bilgilere dayanmaktadır.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const chartColors = {
+            blue: '#00A0B0',
+            red: '#CC333F',
+            orange: '#EB6841',
+            yellow: '#EDC951',
+            brown: '#6A4A3C',
+            background: 'rgba(0, 160, 176, 0.1)'
+        };
+
+        const defaultTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines.filter(line => line.length > 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const inflationCtx = document.getElementById('inflationChart').getContext('2d');
+            new Chart(inflationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Yıllık TÜFE', 'Yıllık Çekirdek TÜFE'],
+                    datasets: [{
+                        label: 'Enflasyon Oranı (%)',
+                        data: [2.7, 3.1],
+                        backgroundColor: [chartColors.orange, chartColors.red],
+                        borderColor: [chartColors.orange, chartColors.red],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...defaultTooltipOptions,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Yüzde (%)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...defaultTooltipOptions.plugins,
+                        legend: {
+                            display: false
+                        },
+                        annotation: {
+                            annotations: {
+                                line1: {
+                                    type: 'line',
+                                    yMin: 2,
+                                    yMax: 2,
+                                    borderColor: chartColors.blue,
+                                    borderWidth: 2,
+                                    borderDash: [6, 6],
+                                    label: {
+                                        content: 'Fed Hedefi (2%)',
+                                        enabled: true,
+                                        position: 'end'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const jobsCtx = document.getElementById('jobsChart').getContext('2d');
+            const jobsLabels = ['2024 Yılı Ortalaması', 'Son 3 Ay Ortalaması'].map(label => wrapLabel(label, 16));
+            new Chart(jobsCtx, {
+                type: 'bar',
+                data: {
+                    labels: jobsLabels,
+                    datasets: [{
+                        label: 'Aylık Ortalama İstihdam Artışı (Bin Kişi)',
+                        data: [168, 35],
+                        backgroundColor: [chartColors.blue, chartColors.yellow],
+                        borderColor: [chartColors.blue, chartColors.yellow],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...defaultTooltipOptions,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Bin Kişi'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...defaultTooltipOptions.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const cryptoCtx = document.getElementById('cryptoChart').getContext('2d');
+            new Chart(cryptoCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Bitcoin (BTC)', 'Ethereum (ETH)', 'XRP'],
+                    datasets: [{
+                        label: 'Konuşma Sonrası Yükseliş (%)',
+                        data: [null, 10.1, 6.5],
+                        backgroundColor: [chartColors.orange, chartColors.blue, chartColors.yellow],
+                        borderColor: [chartColors.orange, chartColors.blue, chartColors.yellow],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Bitcoin (ATH)',
+                        data: [15, null, null],
+                        backgroundColor: chartColors.orange,
+                        borderColor: chartColors.orange,
+                        borderWidth: 1,
+                        stack: 'Stack 0',
+                    }]
+                },
+                options: {
+                    ...defaultTooltipOptions,
+                    indexAxis: 'y',
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Yüzdelik Değişim (%)'
+                            },
+                             stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                        }
+                    },
+                    plugins: {
+                        ...defaultTooltipOptions.plugins,
+                        legend: {
+                           display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.dataset.label === 'Bitcoin (ATH)') {
+                                        return 'Bitcoin >$124,000 (ATH)';
+                                    }
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const generateSummaryBtn = document.getElementById('generateSummaryBtn');
+            const summaryOutput = document.getElementById('summaryOutput');
+
+            // Önceden belirlenmiş ekonomik özet metni
+            const predefinedEconomicSummary = `Fed Başkanı Powell'ın Jackson Hole'daki açıklamaları, piyasalarda önemli bir "güvercin" dönüşü sinyali verdi. Yıllık TÜFE %2.7 ve çekirdek TÜFE %3.1 ile Fed'in %2 hedefini aşsa da, Powell'ın enflasyon beklentilerinin sabitlendiği vurgusu, politika yapıcılarına hareket alanı sağladı. İşsizlik oranının %4.2'ye çıkması ve aylık istihdam artışının 35K gibi düşük seviyelere inmesi, istihdam piyasasındaki belirgin yavaşlamayı gözler önüne serdi. Bu durum, Eylül ayında faiz indirimi olasılığını %90'a taşıdı. Piyasalarda, S&P 500 endeksinde %1.6'lık yükseliş yaşanırken, Dolar/TL paritesi 41'in üzerinde seyretti. Bitcoin gibi riskli varlıklar da gevşek para politikası beklentisiyle tarihi zirveler gördü. Gelecekte, piyasalar Fed'in istihdam verilerine göstereceği tepkiyi ve olası faiz indirimi takvimini yakından takip edecektir.`;
+
+            generateSummaryBtn.addEventListener('click', () => {
+                summaryOutput.textContent = predefinedEconomicSummary;
+            });
+        });
+    </script>
+
+</body>
+</html>
